@@ -7,7 +7,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-    title: 'Nossa Galeria de Momentos',
+    title: '#nois',
     description: 'Um lugar especial para nossas memórias.',
 };
 

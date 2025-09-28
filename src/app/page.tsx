@@ -1,7 +1,7 @@
 // src/app/page.tsx
 
 import Image from 'next/image';
-import { imagesData } from '@/data/images';
+import { imagesData } from '@/data/images'; // Nossa única fonte de verdade
 
 export default function GalleryPage() {
     const formatDate = (dateString: string) => {
@@ -12,6 +12,9 @@ export default function GalleryPage() {
             year: 'numeric',
         });
     };
+
+    // Ordena as imagens diretamente aqui
+    const sortedImages = [...imagesData].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
     return (
         <main className="min-h-screen">
@@ -26,41 +29,30 @@ export default function GalleryPage() {
                 </header>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
-                    {[...imagesData]
-                        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-                        .map((image) => (
-                            <div
-                                key={image.id}
-                                className="group flex flex-col overflow-hidden rounded-lg bg-zinc-900 shadow-md transition-all duration-300 ease-in-out hover:-translate-y-2 "
-                            >
-                                {/* Contêiner da Imagem */}
-                                <div className="relative aspect-square overflow-hidden">
-                                    <Image
-                                        src={image.src}
-                                        alt={image.alt}
-                                        fill={true}
-                                        className="object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-110"
-                                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                                    />
-                                </div>
-
-                                {/* Contêiner do Conteúdo (Título, Data e Categoria) */}
-                                <div className="p-4 flex flex-col flex-grow">
-                                    <h3 className="text-lg font-semibold text-indigo-100 mb-2">
-                                        {image.title}
-                                    </h3>
-                                    {/* Wrapper para Data e Categoria */}
-                                    <div className="mt-auto flex justify-between items-center text-xs">
-                                        <p className="text-zinc-500">
-                                            {formatDate(image.date)}
-                                        </p>
-                                        <span className="bg-indigo-500/20 text-indigo-300 font-medium px-2 py-1 rounded-full">
-                                            {image.category}
-                                        </span>
-                                    </div>
+                    {sortedImages.map((image) => (
+                        <div key={image.id} className="group flex flex-col overflow-hidden rounded-lg bg-zinc-900 shadow-md">
+                            <div className="relative aspect-square overflow-hidden">
+                                <Image
+                                    src={image.src}
+                                    alt={image.alt}
+                                    fill={true}
+                                    className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                                />
+                            </div>
+                            <div className="p-4 flex flex-col flex-grow">
+                                <h3 className="text-lg font-semibold text-indigo-100 mb-2">
+                                    {image.title}
+                                </h3>
+                                <div className="mt-auto flex justify-between items-center text-xs">
+                                    <p className="text-zinc-500">{formatDate(image.date)}</p>
+                                    <span className="bg-indigo-500/20 text-indigo-300 font-medium px-2 py-1 rounded-full">
+                                        {image.category}
+                                    </span>
                                 </div>
                             </div>
-                        ))}
+                        </div>
+                    ))}
                 </div>
 
                 <footer className="text-center mt-12 py-4">

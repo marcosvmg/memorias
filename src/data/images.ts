@@ -111,7 +111,7 @@
             src: '/gallery/foto-13.png',
             alt: '',
             title: 'side-eye pós 2 vinho e 4 cantinho',
-            date: '2025-10-10',
+            date: '2025-10-11',
             category: 'Selfie',
         },
 

@@ -7,6 +7,7 @@
         title: string;
         date: string; // Formato YYY-MM-DD
         category: string; // Novo campo para a categoria
+        spotifyUrl?: string;
     }
 
     export const imagesData: ImageData[] = [
@@ -17,6 +18,7 @@
             title: '1º Encontro',
             date: '2025-09-06',
             category: 'Cabine',
+            spotifyUrl: 'https://open.spotify.com/track/4UEgLd5C8zN1OeVwOS21hJ?si=7df424dbfc544097'
         },
         {
             id: 2,
@@ -94,9 +96,10 @@
             id: 11,
             src: '/gallery/foto-11.png',
             alt: '',
-            title: 'kkk parece um makakinho',
+            title: 'kkk um makakinho',
             date: '2025-10-07',
             category: 'Selfie',
+            spotifyUrl: 'https://open.spotify.com/track/5D8SzvASRr7V7ZrrXsh6SY?si=ef0bb0d8f65846ab'
         },
         {
             id: 12,
@@ -110,7 +113,7 @@
             id: 13,
             src: '/gallery/foto-13.png',
             alt: '',
-            title: 'side-eye pós 2 vinho e 4 cantinho',
+            title: 'side-eye pós 6 vin',
             date: '2025-10-11',
             category: 'Selfie',
         },

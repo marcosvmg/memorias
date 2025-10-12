@@ -1,1 +1,6 @@
+/* src/app/globals.css */
 @import "tailwindcss";
+
+body {
+    @apply antialiased transition-colors duration-500;
+}

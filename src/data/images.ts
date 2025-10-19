@@ -117,5 +117,37 @@
             date: '2025-10-11',
             category: 'Selfie',
         },
+        {
+            id: 14,
+            src: '/gallery/foto-14.png',
+            alt: '',
+            title: '1º fotinha no meu espelho',
+            date: '2025-10-15',
+            category: 'Selfie',
+        },
+        {
+            id: 15,
+            src: '/gallery/foto-15.png',
+            alt: '',
+            title: 'kkkk caxorro salsicha',
+            date: '2025-10-18',
+            category: 'Selfie',
+        },
+        {
+            id: 16,
+            src: '/gallery/foto-16.png',
+            alt: '',
+            title: 'kkkk caxorro salsicha 2',
+            date: '2025-10-18',
+            category: 'Selfie',
+        },
+        {
+            id: 17,
+            src: '/gallery/foto-17.png',
+            alt: '',
+            title: 'momentos antes de pega a maior xuva',
+            date: '2025-10-18',
+            category: 'Selfie',
+        },
 
     ];
